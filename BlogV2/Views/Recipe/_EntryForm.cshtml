@@ -1,0 +1,67 @@
+﻿@model BlogV2.Models.Recipe
+
+@using (Html.BeginForm())
+{
+    <div class="row">
+
+        <div class="col-md-6">
+
+            <div class="form-group">
+                @Html.LabelFor(m => m.Title, new { @class = "control-label" })
+                @Html.TextBoxFor(m => m.Title, "{0:d}", new { @class = "form-control" })
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(m => m.SubTitle, new { @class = "control-label" })
+                @Html.TextBoxFor(m => m.SubTitle, "{0:d}", new { @class = "form-control" })
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(m => m.ImagePath, new { @class = "control-label" })
+                @Html.TextBoxFor(m => m.ImagePath, "{0:d}", new { @class = "form-control" })
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(m => m.Tasty, new { @class = "control-label" })
+                <div>
+                @Html.RadioButtonFor(m => m.Tasty, Tasty.er) Er...
+                @Html.RadioButtonFor(m => m.Tasty, Tasty.okayish) Okayish
+                @Html.RadioButtonFor(m => m.Tasty, Tasty.decent) Decent
+                @Html.RadioButtonFor(m => m.Tasty, Tasty.good) Good
+                @Html.RadioButtonFor(m => m.Tasty, Tasty.amazinggg) Amazingggg
+                </div>
+            </div><br />
+            <div class="form-group">
+                @Html.LabelFor(m => m.Difficulty, new { @class = "control-label" })
+                <div>
+                @Html.RadioButtonFor(m => m.Difficulty, Difficulty.Easy) Er...
+                @Html.RadioButtonFor(m => m.Difficulty, Difficulty.okayish) Okayish
+                @Html.RadioButtonFor(m => m.Difficulty, Difficulty.decent) Decent
+                @Html.RadioButtonFor(m => m.Difficulty, Difficulty.Effort) Effort
+                @Html.RadioButtonFor(m => m.Difficulty, Difficulty.Harddd) Hardd
+             </div>
+            </div>
+
+        </div> <br />
+             <div class="form-group">
+                @Html.LabelFor(m => m.Description, new { @class = "control-label" })<br />
+                @Html.TextAreaFor(m => m.Description, 5, 100, null)
+            </div>
+        <br />
+            <div class="form-group">
+                @Html.LabelFor(m => m.Instructions, new { @class = "control-label" })<br />
+                @Html.TextAreaFor(m => m.Instructions, 10, 100, null)
+            </div> 
+    </div>
+
+        <div class="col-md-12">
+            <div class="pad-top">
+                <button type="submit" class="btn btn-success btn-lg margin-right">
+                    <span class="glyphicon glyphicon-save"></span> Save
+                </button>
+                <a href="@Url.Action("Recipe")" class="btn btn-warning btn-lg">
+                    <span class="glyphicon glyphicon-remove"></span> Cancel
+                </a>
+            </div>
+        </div>
+}

@@ -1,0 +1,43 @@
+﻿@model IEnumerable<BlogV2.Models.Recipe>
+
+@{
+    ViewData["Title"] = "Privacy Policy";
+}
+<bodyRecipepage>
+    @foreach (var entry in Model)
+    {
+        <div>
+            <div style="border-bottom : 2px solid grey">
+                <h2>@entry.Title</h2>
+            </div>
+            <div><br />
+                <h4>@entry.SubTitle</h4>
+                <img src="@Url.Content(entry.ImagePath)" alt="picture of the start to finish project" style="width : 30%" />
+            </div>
+
+            <div><br />
+                <h5>Descripton</h5>
+                <p>@entry.Description</p>
+            </div>
+            <h5>Ratings</h5>
+              <p>Taste : @entry.Tasty</p>
+              <p>Difficulty : @entry.Difficulty</p>
+              <p>Time : @entry.TimeinMin mins</p>
+            <div>
+                <h5>Instructions</h5>
+                <p>@entry.Instructions</p>
+
+            </div>
+
+            <div class="pull-right">
+                        <a href="@Url.Action("Edit", new { id = entry.Id })" class="btn btn-warning btn-sm margin-right">
+                            <span class="glyphicon glyphicon-edit"></span><span class="hidden-xs"> Edit</span>
+                        </a>
+                        <a href="@Url.Action("Delete", new { id = entry.Id })" class="btn btn-danger btn-sm">
+                            <span class="glyphicon glyphicon-trash"></span><span class="hidden-xs"> Delete</span>
+                        </a>
+            </div>
+        </div>
+    }
+</bodyRecipepage>
+
