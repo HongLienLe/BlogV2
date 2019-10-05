@@ -4,17 +4,6 @@
  * Copyright 2011-2019 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
-.bodyRecipepage{
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1.5;
-    width : 75%;
-    color: #212529;
-    text-align: center;
-    background-color: #fff;
-}
 
 .thumb1 { 
   background: url(blah.jpg) 50% 50% no-repeat; /* 50% 50% centers image in div */
